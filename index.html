@@ -12,12 +12,16 @@
 var http = new XMLHttpRequest();
 http.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
-    console.log(this.responseText);
+    // console.log(this.responseText);
+    window.phenom = {
+        schema: JSON.parse(this.responseText),
+    };
   }
 };
 
 http.open("GET", schemapath);
 http.send();
+
 
   </script> 
  </body>
