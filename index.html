@@ -7,8 +7,7 @@
   <h1>This is a demo site</h1>
   <div id="nonApplyDiv"></div>
   <script>
-   var schemapath = 'https://dev-ng-static.phenompeople.com/CareerConnectResources/COMMON/js/applyStudioBundles/nonapply/nonapply_form_schema.json';
-
+ var schemapath = 'https://dev-ng-static.phenompeople.com/CareerConnectResources/COMMON/js/applyStudioBundles/nonapply/nonapply_form_schema.json';
 var http = new XMLHttpRequest();
 http.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
@@ -16,13 +15,15 @@ http.onreadystatechange = function () {
     window.phenom = {
         schema: JSON.parse(this.responseText),
     };
+    var header = document.getElementsByTagName("head")[0];
+    var node = document.createElement("script");
+    node.type = "text/javascript";
+    node.src = "https://dev-ng-static.phenompeople.com/CareerConnectResources/NONAPPLY/nonapply_form_renderer.js";
+    header.append(node);
   }
 };
-
 http.open("GET", schemapath);
 http.send();
-
-
   </script> 
  </body>
 </html>
