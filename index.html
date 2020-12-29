@@ -6,7 +6,7 @@
  <body>
   <h1>This is a demo site</h1>
   <div id="nonApplyDiv"></div>
-  <script type="text/javascript">
+ <script type="text/javascript">
           var http = new XMLHttpRequest();
           http.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
@@ -20,7 +20,7 @@
               header.append(node);
             }
           };
-          http.open("GET", "https://dev-ng-static.phenompeople.com/CareerConnectResources/NONAPPLY/demo/demo_form.json");
+          http.open("GET", "https://dev-ng-static.phenompeople.com/CareerConnectResources/NONAPPLY/mo/myform.json");
           http.send();
         </script>
  </body>
